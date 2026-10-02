@@ -13,8 +13,7 @@ class SouthseaCinemaApp extends StatelessWidget {
       title: 'Southsea Cinema',
       home: Scaffold(
         appBar: AppBar(title: const Text('Southsea Cinema')),
-        body: const Center(
-          child: Text('Welcome to Southsea Cinema'),
+        body: const Center(child: OrderItemDisplay(5, 'Frozen')
         ),
       ),
     );
@@ -30,6 +29,7 @@ class OrderItemDisplay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text('This is a placeholder for OrderItemDisplay');
+    return Text('$quantity $itemType movie(s): ${'🎞️' * quantity}');
   }
 }
+
