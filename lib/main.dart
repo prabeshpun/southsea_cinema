@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 void main() {
   runApp(const SouthseaCinemaApp());
 }
@@ -10,7 +9,14 @@ class SouthseaCinemaApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return MaterialApp(
+      title: 'Southsea Cinema',
+      home: Scaffold(
+        appBar: AppBar(title: const Text('Southsea Cinema')),
+        body: const Center(
+          child: Text('Welcome to Southsea Cinema'),
+        ),
+      ),
+    );
   }
 }
-
