@@ -75,7 +75,22 @@ class _MovieListingState extends State<MovieListing> {
             ),
             const SizedBox(height: 16),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                if (_quantity == 0) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('Please select at least one ticket.'),
+                    ),
+                  );
+                } else {
+                  // Navigate to the next page or perform any action
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('Added $_quantity ticket(s) to basket.'),
+                    ),
+                  );
+                }
+              },
               child: const Text('Add to Basket'),
             )
           ],
