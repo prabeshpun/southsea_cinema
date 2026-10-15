@@ -4,8 +4,15 @@ import 'package:southsea_cinema/widgets/nav_drawer.dart';
 
 const bodyStyle = TextStyle(color: Colors.white);
 
-class MovieListing extends StatelessWidget {
+class MovieListing extends StatefulWidget {
   const MovieListing({super.key});
+
+  @override
+  State<MovieListing> createState() => _MovieListingState();
+}
+
+class _MovieListingState extends State<MovieListing> {
+  int _quantity = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -45,21 +52,25 @@ class MovieListing extends StatelessWidget {
             Row(
               children: [
                 DropdownButton<int>(
-                    value: 0,
-                    dropdownColor: cinemaSurface,
-                    style: bodyStyle,
-                    items: const [
-                      DropdownMenuItem(value: 0, child: Text('0')),
-                      DropdownMenuItem(value: 1, child: Text('1')),
-                      DropdownMenuItem(value: 2, child: Text('2')),
-                      DropdownMenuItem(value: 3, child: Text('3')),
-                      DropdownMenuItem(value: 4, child: Text('4')),
-                      DropdownMenuItem(value: 5, child: Text('5')),
-                    ],
-                    onChanged: (value) {},
-                    ),
-                    const SizedBox(width: 16),
-                    Text('Adult (£7.50)', style: bodyStyle),
+                  value: _quantity,
+                  dropdownColor: cinemaSurface,
+                  style: bodyStyle,
+                  items: const [
+                    DropdownMenuItem(value: 0, child: Text('0')),
+                    DropdownMenuItem(value: 1, child: Text('1')),
+                    DropdownMenuItem(value: 2, child: Text('2')),
+                    DropdownMenuItem(value: 3, child: Text('3')),
+                    DropdownMenuItem(value: 4, child: Text('4')),
+                    DropdownMenuItem(value: 5, child: Text('5')),
+                  ],
+                  onChanged: (value) {
+                    setState(() {
+                      _quantity = value!;
+                    });
+                  },
+                ),
+                const SizedBox(width: 16),
+                Text('Adult (£7.50)', style: bodyStyle),
               ],
             ),
             const SizedBox(height: 16),
