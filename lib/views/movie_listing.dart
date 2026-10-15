@@ -15,7 +15,9 @@ class MovieListing extends StatelessWidget {
         elevation: 0,
       ),
       drawer: const NavDrawer(),
-      body: const SizedBox.shrink(),
+      body: Column(children: [
+        Text('Unko Sweater (2025)'')
+      ],)
     );
   }
 }
