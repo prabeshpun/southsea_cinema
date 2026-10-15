@@ -58,7 +58,7 @@ class MovieListing extends StatelessWidget {
                     ],
                     onChanged: (value) {},
                     ),
-                    constSizedBox(width: 16),
+                    const SizedBox(width: 16),
                     Text('Adult (£7.50)', style: bodyStyle),
               ],
             ),
