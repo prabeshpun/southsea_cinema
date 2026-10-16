@@ -24,11 +24,12 @@ class _MovieListingState extends State<MovieListing> {
         elevation: 0,
       ),
       drawer: const NavDrawer(),
-      body: Padding(
+      body: Container(
         padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            // Text("another text"),
             Text(
               'Unko Sweater (2025)',
               style: cinemaHeaderStyle.copyWith(fontSize: 30),
