@@ -5,7 +5,8 @@ import 'package:southsea_cinema/widgets/movie_card.dart';
 
 void main() {
   group('Home page smoke tests', () {
-    testWidgets('home page displays the app title', (WidgetTester tester) async {
+    testWidgets('home page displays the app title',
+        (WidgetTester tester) async {
       await tester.pumpWidget(const SouthseaCinemaApp());
 
       expect(find.text(appTitle), findsOneWidget);

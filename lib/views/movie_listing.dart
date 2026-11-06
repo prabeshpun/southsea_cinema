@@ -41,7 +41,7 @@ class _MovieListingState extends State<MovieListing> {
 
             Text('Southsea Cinema Room', style: bodyStyle),
             const SizedBox(height: 16),
-            
+
             Text(widget.movie.showtime, style: bodyStyle),
             const SizedBox(height: 16),
 
@@ -79,7 +79,6 @@ class _MovieListingState extends State<MovieListing> {
                   },
                 ),
                 const SizedBox(width: 16),
-
                 Text(
                   'Adult (${widget.movie.formattedPrice})',
                   style: bodyStyle,
@@ -87,7 +86,7 @@ class _MovieListingState extends State<MovieListing> {
               ],
             ),
             const SizedBox(height: 16),
-            
+
             ElevatedButton(
               onPressed: () {
                 if (_quantity == 0) {

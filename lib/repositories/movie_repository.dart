@@ -18,8 +18,7 @@ class MovieRepository {
         id: 'karsang',
         title: 'Karsang',
         rating: '15',
-        description:
-            'A retired detective returns to his coastal hometown and '
+        description: 'A retired detective returns to his coastal hometown and '
             'finds that an old mystery is not as buried as he thought.',
         imagePath: 'assets/images/karsang.jpeg',
         showtime: 'Friday 23 Oct 2026, 20:00',

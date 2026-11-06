@@ -53,7 +53,7 @@ class MovieCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(movie.showtime),
-                            ElevatedButton(
+              ElevatedButton(
                 onPressed: () {
                   Navigator.push(
                     context,
