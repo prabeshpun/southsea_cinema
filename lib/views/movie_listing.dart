@@ -81,7 +81,7 @@ class _MovieListingState extends State<MovieListing> {
                 const SizedBox(width: 16),
 
                 Text(
-                  'Adult (£${widget.movie.price.toStringAsFixed(2)})',
+                  'Adult (${widget.movie.formattedPrice})',
                   style: bodyStyle,
                 ),
               ],

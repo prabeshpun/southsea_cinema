@@ -16,4 +16,6 @@ class Movie {
     required this.showtime,
     required this.price,
   });
+
+  String get formattedPrice => '£${price.toStringAsFixed(2)}';
 }
