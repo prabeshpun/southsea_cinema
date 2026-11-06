@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:southsea_cinema/constants.dart';
 import 'package:southsea_cinema/widgets/nav_drawer.dart';
+import 'package:southsea_cinema/models/movie.dart';
 
 const bodyStyle = TextStyle(color: Colors.white);
 
 class MovieListing extends StatefulWidget {
-  const MovieListing({super.key});
+  final Movie movie;
+
+  const MovieListing({super.key, required this.movie});
 
   @override
   State<MovieListing> createState() => _MovieListingState();
@@ -31,25 +34,30 @@ class _MovieListingState extends State<MovieListing> {
           children: [
             // Text("another text"),
             Text(
-              'Unko Sweater (2025)',
+              '${widget.movie.title} (${widget.movie.rating})',
               style: cinemaHeaderStyle.copyWith(fontSize: 30),
             ),
             const SizedBox(height: 16),
+
             Text('Southsea Cinema Room', style: bodyStyle),
             const SizedBox(height: 16),
-            Text('Thursday 22 Oct 2026, 18:30 - ends at 20:30',
-                style: bodyStyle),
+            
+            Text(widget.movie.showtime, style: bodyStyle),
             const SizedBox(height: 16),
+
             Text(
               'Please note that Discounts / Membership Benefits will be applied once you have selected your tickets and seats.',
               style: bodyStyle,
             ),
             const SizedBox(height: 16),
+
             Text('Select Quantities (Up to 5 in total)', style: bodyStyle),
             const SizedBox(height: 16),
+
             Text('Tickets',
                 style: bodyStyle.copyWith(fontWeight: FontWeight.bold)),
             const SizedBox(height: 16),
+
             Row(
               children: [
                 DropdownButton<int>(
@@ -71,10 +79,15 @@ class _MovieListingState extends State<MovieListing> {
                   },
                 ),
                 const SizedBox(width: 16),
-                Text('Adult (£7.50)', style: bodyStyle),
+
+                Text(
+                  'Adult (£${widget.movie.price.toStringAsFixed(2)})',
+                  style: bodyStyle,
+                ),
               ],
             ),
             const SizedBox(height: 16),
+            
             ElevatedButton(
               onPressed: () {
                 if (_quantity == 0) {
