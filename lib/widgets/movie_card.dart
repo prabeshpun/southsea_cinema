@@ -53,7 +53,7 @@ class MovieCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(movie.showtime),
-              ElevatedButton(
+                            ElevatedButton(
                 onPressed: () {
                   Navigator.push(
                     context,
@@ -62,6 +62,11 @@ class MovieCard extends StatelessWidget {
                     ),
                   );
                 },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: cinemaBrand,
+                  foregroundColor: Colors.white,
+                  shape: const RoundedRectangleBorder(),
+                ),
                 child: const Text('BOOK NOW'),
               ),
             ],
