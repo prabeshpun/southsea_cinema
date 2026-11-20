@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:southsea_cinema/constants.dart';
 import 'package:southsea_cinema/widgets/nav_drawer.dart';
 import 'package:southsea_cinema/models/movie.dart';
+import 'package:southsea_cinema/widgets/primary_button.dart';
 
 const bodyStyle = TextStyle(color: Colors.white);
 
@@ -84,7 +85,8 @@ class _MovieListingState extends State<MovieListing> {
             ),
             const SizedBox(height: 16),
 
-            ElevatedButton(
+                        PrimaryButton(
+              label: 'Add to Basket',
               onPressed: () {
                 if (_quantity == 0) {
                   ScaffoldMessenger.of(context).showSnackBar(
@@ -93,7 +95,6 @@ class _MovieListingState extends State<MovieListing> {
                     ),
                   );
                 } else {
-                  // Navigate to the next page or perform any action
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
                       content: Text('Added $_quantity ticket(s) to basket.'),
@@ -101,7 +102,6 @@ class _MovieListingState extends State<MovieListing> {
                   );
                 }
               },
-              child: const Text('Add to Basket'),
             )
           ],
         ),
